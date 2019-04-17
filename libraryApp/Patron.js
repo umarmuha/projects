@@ -16,7 +16,6 @@ class Patron {
          It cannot be called like a function()
         */
         //book.out(true); // invoking the setter method
-        
 
         /*
          Use setter method in the Book class to make the code
