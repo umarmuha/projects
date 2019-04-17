@@ -8,6 +8,9 @@ class Book {
         this.patron = null;
     }
 
+    get out(){
+        return this._out;
+    }
     set out(boolean){
         this._out = boolean;
         if (this._out = true) {
