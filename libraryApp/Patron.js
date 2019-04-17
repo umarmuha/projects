@@ -8,7 +8,8 @@ class Patron {
     // Methods representing a Patreon function
     checkout(book) {
         this.currentBook = book;
-        book.out = true;
+        //book.out = true; //old method
+        book.out(true); // invoking the setter method
         book.patron = this;
 
         /*
@@ -23,7 +24,8 @@ class Patron {
 
     returnBook(book) {
         this.currentBook = null;
-        book.out = false;
+        book.out(false); // using setter method now
+        //book.out = false; // old method
         // See comment above about using Setter method in Book class
         // book.patron = null;
         // book.dueDate = null;
