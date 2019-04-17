@@ -1,8 +1,9 @@
 class Patron {
-    constructor(name, email) {
+    constructor(name, email,balance) {
         this.name = name;
         this.email = email;
         this.currentBook = null; // A new Patron will not have any books checked so passing null
+        this.balance = 0;
     }
 
     // Methods representing a Patreon function
