@@ -1,9 +1,9 @@
 class Book {
-    constructor(title, author, isbn, out, dueDate, patron) {
+    constructor(title, author, isbn) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
-        this.out = false;
+        this._out = false;
         this.dueDate = null;
         this.patron = null;
     }
@@ -19,7 +19,6 @@ class Book {
             this.dueDate = newDueDate;
         } else {
             this.dueDate = null;
-            this.patron = null;
         }
     };
 }
