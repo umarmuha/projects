@@ -12,3 +12,6 @@ console.log(library);
 
 patron.checkout(book);
 console.log(book);
+
+patron.returnBook(book);
+console.log(book);

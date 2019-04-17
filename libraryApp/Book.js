@@ -11,14 +11,14 @@ class Book {
     get out(){
         return this._out;
     }
-    set out(boolean){
-        this._out = boolean;
-        if (this._out = true) {
+    set out(out){
+        this._out = out;
+        if (out) {
             const newDueDate = new Date();
             newDueDate.setDate(newDueDate.getDate() + 14);
             this.dueDate = newDueDate;
         } else {
-            this.dueDate = false;
+            this.dueDate = null;
             this.patron = null;
         }
     };
