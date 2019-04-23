@@ -17,7 +17,9 @@ $(document).ready(function () {
     // patron.returnBook(book);
     // console.log(book);
 
-    //console.log(patron);
-
+    
+    console.log(patron);
+    console.log(library.chargeFines());
+    console.log(library.chargeFines());
     console.log(library.chargeFines());
 });

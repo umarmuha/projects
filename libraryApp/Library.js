@@ -1,8 +1,9 @@
 class Library {
-    constructor(books, patrons, dailyFine) {
+    constructor(books, patrons, dailyFine, overdue) {
         this.books = [];
         this.patrons = [];
         this.dailyFine = 0.1;
+        this.overdue = [];
     }
 
     // Methods that represent library function
@@ -28,13 +29,23 @@ class Library {
         const today = new Date();
         const latePatrons = this.patrons.filter(patron => patron.currentBook !== null && patron.currentBook.dueDate < today);
 
+        // Challenge: run chargesfine() method without doubling the fine for the patron
+        const lateChragedPatron = [];
+        console.log(lateChragedPatron);
+        
         // Using for .. of loop to iterate over array objects. Not using
         // for..in since that iterated over properties
         for (const latePatron of latePatrons) {
-            const daysLate = today.getDate() - latePatron.currentBook.dueDate.getDate();
-            latePatron.balance += (daysLate * this.dailyFine);
-            console.log(latePatron.balance);
-
+            // If patron is already charged, charge him only for the difference of days since last check
+            if (lateChragedPatron.includes(latePatron.name)) {
+                console.log("Dont Charge")
+            } else {
+                const daysLate = today.getDate() - latePatron.currentBook.dueDate.getDate();
+                latePatron.balance += (daysLate * this.dailyFine);
+                lateChragedPatron.push(latePatron.name);              
+            }
+            
+            console.log(lateChragedPatron);
         }
 
 
