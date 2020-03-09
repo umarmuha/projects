@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Results from "./Results";
 import pet, { ANIMALS } from "@frontendmasters/pet";
 import useDropdown from "./useDropdown";
+import ThemeContext from "./ThemeContext";
 
 const SearchParams = () => {
   //   const location = "Seattle, WA";
@@ -11,9 +12,10 @@ const SearchParams = () => {
   //   const [animal, setAnimal] = useState("dog");
   //   const [breed, setBreed] = useState("");
   const [breeds, setBreeds] = useState([]);
-  const [animal, AnimalDropdown] = useDropdown("Animal", "dog", ANIMALS);
+  const [animal, AnimalDropdown] = useDropdown("Animal", "cat", ANIMALS);
   const [breed, BreedDropdown, setBreed] = useDropdown("Breed", "", breeds);
   const [pets, setPets] = useState([]);
+  const [theme, setTheme] = useContext(ThemeContext);
 
   async function requestPets() {
     const { animals } = await pet.animals({
@@ -56,7 +58,20 @@ const SearchParams = () => {
         </label>
         <AnimalDropdown />
         <BreedDropdown />
-        <button>Submit</button>
+        {/* Creating a new dropdown for theme. Cant use useDropdown as update state is coming from App.js */}
+        <label htmlFor="theme">
+          Theme
+          <select
+            value={theme}
+            onChange={e => setTheme(e.target.value)}
+            onBlur={e => setTheme(e.target.value)}
+          >
+            <option value="peru">Peru</option>
+            <option value="lightgrey">Light Grey</option>
+            <option value="mediumorchid">Medium Orchid</option>
+          </select>
+        </label>
+        <button style={{ backgroundColor: theme }}>Submit</button>
       </form>
       <Results pets={pets} />
     </div>
