@@ -23,7 +23,7 @@ const SearchParams = () => {
     });
     setPets(animals || []);
 
-    console.log(animals);
+    console.log(`The pets(animals passed over to results page are:`, animals);
   }
 
   useEffect(() => {

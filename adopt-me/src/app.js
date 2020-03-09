@@ -5,6 +5,8 @@ import SearchParams from "./SearchParams";
 import { Router, Link } from "@reach/router";
 import Details from "./Details";
 import AmChart from "./AmChart";
+import AmChartAxes from "./AmChartAxis";
+import DetailsFunc from "./DetailsFunc";
 
 const App = () => {
   //   return React.createElement(
@@ -35,6 +37,7 @@ const App = () => {
           <SearchParams path="/" />
           <Details path="/details/:id" />
           <AmChart path="/amchart" />
+          <AmChartAxes path="/amchartaxis" />
         </Router>
         {/* <Pet name="Luna" animal="Dog" breed="Havanese" />
       <Pet name="Pepper" animal="Bird" breed="Cockatiel" />

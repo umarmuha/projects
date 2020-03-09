@@ -246,6 +246,12 @@ class AmChart extends Component {
     this.chart = chart;
   }
 
+  componentDidUpdate(oldProps) {
+    if (oldProps.paddingRight !== this.props.paddingRight) {
+      this.chart.paddingRight = this.props.paddingRight;
+    }
+  }
+
   componentWillUnmount() {
     if (this.chart) {
       this.chart.dispose();

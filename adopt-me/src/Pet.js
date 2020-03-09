@@ -31,6 +31,8 @@ export default function Pet({ name, animal, breed, media, location, id }) {
       <div className="info">
         <h1>{name}</h1>
         <h2>{`${animal}-${breed}-${location}`}</h2>
+        <h3>{id}</h3>
+        {/* <DetailsFunc id={id} /> */}
       </div>
     </Link>
   );
