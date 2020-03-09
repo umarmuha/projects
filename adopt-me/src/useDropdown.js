@@ -1,7 +1,6 @@
 // This module will create a cutom React Hook that we can use to
 // make a reusable dropdown component
 import React, { useState } from "react";
-import ThemeContext from "./ThemeContext";
 
 const useDropdown = (label, defaultState, options) => {
   // ("Animal", "dog", ANIMALS)
